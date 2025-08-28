@@ -1,0 +1,211 @@
+/* General body and font styles */
+body {
+    font-family:cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f8f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Page layout using Flexbox */
+/* body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+} */
+
+body {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "left main right";
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: auto 1fr; 
+    min-height: 100vh; 
+}
+
+.ZgornjiMeni {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #E5E5E5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.Logo img {
+    height: 70px;
+}
+
+.Navigacija {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.Navigacija li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.Navigacija li a:hover {
+    color: #007bff;
+}
+
+/* Main content area layout */
+.GlavniDel {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 50px 10px;
+    max-height: 500px;
+    max-width: 900px;
+    border-radius: 8px;
+    justify-self: center;
+    /* align-self: stretch; */
+}
+
+.GlavniDel h2 {
+    text-align: center;
+    color: #13254E;
+    margin-bottom: 20px;
+}
+
+.GlavniDel p {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Side menus */
+
+.LeviMeni {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-top: 3px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+}
+.LeviMeniNaslov{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.DesniMeni {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    margin-top: 3px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+    
+}
+
+.DesniMeniNaslov{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.DesniMeniSeznam{
+    color: black;
+    font-size: 13px;
+    list-style: none;
+    padding: 0;
+    margin: 0 10px 10px 10px;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Styling for the buttons */
+
+.AnketaGumbi {
+    display: flex;
+    justify-content: center; /* This will center the buttons horizontally on the page */
+    gap: 50px; /* This adds a nice space between the two buttons */
+    margin-top: 30px; /* Keep the margin from the original code */
+}
+
+.KraktaAnketaGumb, .PoglobljenaAnketaGumb {
+    text-align: center;
+}
+
+.KraktaAnketaGumb a, .PoglobljenaAnketaGumb a {
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #13254E;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.KraktaAnketaGumb a:hover, .PoglobljenaAnketaGumb a:hover {
+    background-color: #0056b3;
+}
+
+/* Adjustments for the side menus */
+/* Note: Since the HTML has empty divs, this just sets up a basic column structure. */
+body {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "left main right";
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+.ZgornjiMeni {
+    grid-area: header;
+}
+
+.LeviMeni {
+    grid-area: left;
+    background-color: #B5D6EE;
+}
+
+.GlavniDel {
+    grid-area: main;
+}
+
+.DesniMeni {
+    grid-area: right;
+    background-color: #B5D6EE;
+}
+
+/* Hide side menus on smaller screens to prioritize content */
+@media (max-width: 768px) {
+    body {
+        grid-template-areas:
+            "header"
+            "main";
+        grid-template-columns: 1fr;
+    }
+
+    .LeviMeni, .DesniMeni {
+        display: none;
+    }
+
+    .ZgornjiMeni {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .Navigacija {
+        flex-direction: column;
+        align-items: center;
+    }
+}
