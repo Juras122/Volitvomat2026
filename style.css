@@ -193,6 +193,7 @@ body {
             "header"
             "main";
         grid-template-columns: 1fr;
+        font-family:'Times New Roman', Times, serif;
     }
 
     .LeviMeni, .DesniMeni {
@@ -208,4 +209,5 @@ body {
         flex-direction: column;
         align-items: center;
     }
+
 }
